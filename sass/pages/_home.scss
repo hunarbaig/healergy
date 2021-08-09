@@ -1,0 +1,87 @@
+.section__about {
+    background-color: $color-white;
+    padding: 20rem 0;
+    margin-top: -15vh;
+
+    &--text {
+        font-size: $default-font-size;
+    }
+
+    @include respond(tab-port) {
+        padding: 15rem 0;
+    }
+}
+
+.section__products {
+    background-color: $color-light-grey;
+    padding: 15rem 0;
+    margin-top: -10rem;
+
+    @include respond(tab-port) {
+        padding: 20rem 0 10rem 0;
+    }
+}
+
+.section__contact {
+    padding: 15rem 0rem;
+    background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+
+    @include respond(tab-port) {
+        padding: 10rem 0;
+    }
+}
+
+.section__text {
+    font-size: 2rem;
+    text-align: center;
+    margin: 2rem;
+
+    @include respond(phone) {
+        font-size: 3rem;
+    }
+
+}
+
+.contact {
+    background-image:linear-gradient(72deg,
+                     rgba($color-black, .3) 0%,
+                     rgba($color-black, .3) 50%,
+                     $color-white 50%),                  
+                     url(../img/contact-img.jpg);
+    background-size: 100%;
+    border-radius: $rounded-corners;
+    box-shadow: 0 2rem 3rem rgba($color-black, .2);
+
+    @include respond(tab-land) {
+        background-image:linear-gradient(72deg,
+                     rgba($color-black, .3) 0%,
+                     rgba($color-black, .3) 45%,
+                     $color-white 45%),                  
+                     url(../img/contact-img.jpg);
+        background-size: cover;
+
+    }
+
+    @include respond(tab-port) {
+        background-image: linear-gradient(to left,
+                                    rgba($color-white, .9) 0%,
+                                    rgba($color-white, .9) 100%),
+                                    url(../img/contact-img.jpg);                            
+    }
+
+
+    &__form {
+        padding: 6rem;
+        width: 100%;
+    }
+
+    &__heading {
+        margin-left: 60rem;
+
+        @include respond(tab-port) {
+            margin-left: 0;
+        }
+    }
+
+
+}

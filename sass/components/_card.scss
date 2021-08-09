@@ -1,0 +1,224 @@
+.card {
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    height: 52rem;
+    position: relative;
+
+    &__side {
+        height: 52rem;
+        width: 100%;
+        position: absolute;
+        transition: all .9s ease;
+        top: 0;
+        left: 0;
+        backface-visibility: hidden;
+        border-radius: 3px;
+        overflow: hidden;
+        box-shadow: 0 2rem 5rem rgba($color-black, .15);
+        
+
+
+    &--front {
+    background-color: $color-white-dark;
+    }
+
+    &--back {
+        transform: rotateY(180deg);
+        
+        &-1 {
+            background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+        }
+
+        &-2 {
+            background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+        }
+
+        &-3 {
+            background-image: linear-gradient(to right bottom, $color-quaternary-light, $color-quaternary-dark);
+        }
+
+        
+     
+    }
+    }
+    &:hover &__side--front {
+        transform: rotateY(-180deg);
+    }
+
+    &:hover &__side--back {
+        transform: rotateY(0deg);
+    }
+
+    //FRONT_SIDE STYLING
+
+    &__image {
+        background-size: cover;
+        height: 42rem;
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+
+        
+        &-1 {
+            background-image: url(../img/card-1.jpg);
+        }
+
+        &-2 {
+            background-image: url(../img/card-2.jpg); 
+        }
+
+        &-3 {
+            background-image: url(../img/card-3.jpg);
+        }
+    }
+
+    &__heading {
+        position: absolute;
+        text-align: right;
+        font-size: 2.8rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        right: 2rem;
+
+        &--1 {
+            color: $color-secondary;
+        }
+
+        &--2 {
+            color: $color-tertiary;
+        }
+
+        &--3 {
+            color: $color-quaternary;
+        }
+
+    }
+
+    //BACK_SIDE STYLING
+    &__details {
+        padding: 3.5rem;
+        
+
+        &-box {
+            width: 100%;
+            color: $color-white;
+            font-size: $default-font-size;
+            text-align: center;
+        }
+
+        &--text {
+            font-weight: 400;
+            padding: 1rem;
+            border-bottom: 1px solid $color-white-dark;
+        }
+
+        &--only {
+            font-weight: 300;
+            margin-top: 2.5rem;
+        }
+
+        &--price {
+            font-size: 4rem;
+            font-weight: 200;
+        }
+
+        &--btn {
+            text-align: center;
+            width: 80%;
+            margin: 6.5rem 3rem;
+        }
+
+
+    }
+
+    //Media Query
+    //BACK_SIDE STYLING
+    &__details {
+        padding: 3.5rem;
+        
+
+        &-box {
+            width: 100%;
+            color: $color-white;
+            font-size: $default-font-size;
+            text-align: center;
+        }
+
+        &--text {
+            font-weight: 400;
+            padding: 1rem;
+            border-bottom: 1px solid $color-white-dark;
+        }
+
+        &--only {
+            font-weight: 300;
+            margin-top: 2.5rem;
+        }
+
+        &--price {
+            font-size: 4rem;
+            font-weight: 200;
+        }
+
+        &--btn {
+            text-align: center;
+            width: 80%;
+            margin: 6.5rem 3rem;
+        }
+
+    }
+        //MEDIA QUERY
+        //@include respond(tab-port) {
+
+        @media only screen and (max-width:56.25em),
+        only screen and (hover:none) {
+         height: auto;
+         border-radius: $rounded-corners;
+         background-color: $color-white;
+         box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+     
+         &__side {
+             height: auto;
+             position: relative;
+             box-shadow: none;
+             height: 42rem;
+
+         &--front {
+            background-color: $color-white;
+         }
+             
+         &--back {
+            transform: rotateY(0);
+            transform: rotateY(0);
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+            
+            }
+         }
+
+         &__heading {
+             visibility: hidden;
+             font-size: 0;
+         }
+     
+     
+         &:hover &__side--front {
+             transform: rotateY(0);
+         }
+
+         //BACK-SIDE STYLING 
+         &__details {
+             position: relative;
+             top: 0;
+             left: 0;
+             transform: translate(0);
+             width: 100%;
+             padding: 7rem 4rem 4rem 4rem;
+             &-box{
+                 margin-bottom: 3rem;
+             }
+     
+             
+            }
+        }
+}
